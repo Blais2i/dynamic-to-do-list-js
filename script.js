@@ -15,25 +15,25 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Create new list item with textContent as specified
+        // Create new list item with textContent
         const li = document.createElement('li');
-        li.textContent = taskText;  // Directly setting textContent on li
+        li.textContent = taskText;
         
-        // Create remove button with exact specifications
+        // Create remove button with classList.add()
         const removeButton = document.createElement('button');
         removeButton.textContent = "Remove";
-        removeButton.className = "remove-btn";
+        removeButton.classList.add('remove-btn');  // Changed to use classList.add()
         
-        // Assign onclick event to remove button exactly as specified
+        // Assign onclick event to remove button
         removeButton.onclick = function() {
             taskList.removeChild(li);
         };
         
-        // Append elements exactly as specified
+        // Append elements in specified order
         li.appendChild(removeButton);
         taskList.appendChild(li);
         
-        // Clear input exactly as specified (note lowercase 'i' in taskinput)
+        // Clear input field
         taskInput.value = "";
     }
     
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 2. Enter key event on input field
     taskInput.addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {  // Exact check for Enter key
+        if (event.key === 'Enter') {
             addTask();
         }
     });
